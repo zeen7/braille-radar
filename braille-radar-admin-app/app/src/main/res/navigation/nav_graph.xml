@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/usageGraphFrag">
+
+    <fragment
+        android:id="@+id/adminCreationFrag"
+        android:name="com.example.adminapp.AdminCreationFrag"
+        android:label="admin_creation"
+        tools:layout="@layout/admin_creation" />
+    <fragment
+        android:id="@+id/tagCreationFrag"
+        android:name="com.example.adminapp.TagCreationFrag"
+        android:label="tag_creation"
+        tools:layout="@layout/tag_creation" />
+    <fragment
+        android:id="@+id/usageGraphFrag"
+        android:name="com.example.adminapp.UsageGraphFrag"
+        android:label="UsageGraphFrag"
+        tools:layout="@layout/usage_graphs"/>
+    <fragment
+        android:id="@+id/tagManagementFrag"
+        android:name="com.example.adminapp.TagManagementFrag"
+        android:label="tag_management"
+        tools:layout="@layout/tag_management"/>
+    <fragment
+        android:id="@+id/tagEditFrag"
+        android:name="com.example.adminapp.TagEditFrag"
+        android:label="tag_edit"
+        tools:layout="@layout/tag_edit"/>
+</navigation>

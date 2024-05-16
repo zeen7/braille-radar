@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- hardcoded companies and their ids until i fix the workaround (when org api is available)-->
+    <string-array name="company_names_array">
+        <item>Tech Corp</item>
+        <item>Media Solutions Ltd.</item>
+        <item>Healthcare Innovations</item>
+        <item>Braille Radar</item>
+
+    </string-array>
+
+    <string-array name="company_ids_array">
+        <item>a43f8d1b-d2ed-4c6f-84b2-203764b6d635</item>
+        <item>b091c0fc-2357-446b-ae63-1a1b0782a72b</item>
+        <item>c4b50c45-bb7a-4d48-ae21-6303ca1cfc37</item>
+        <item>6f494a38-e871-449a-860f-433d85feb07d</item> <!-- Add more IDs for additional companies -->
+    </string-array>
+
+    <string-array name="tag_types_array">
+        <item>Room</item>
+        <item>Washroom</item>
+        <item>Food</item>
+        <item>Elevator</item>
+        <item>Stairs</item>
+        <item>Entrance</item>
+    </string-array>
+</resources>

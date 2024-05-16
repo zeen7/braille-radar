@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/RegistrationTab"
+        android:icon="@drawable/add_tag"
+        android:title="Add Data"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/ManagementTab"
+        android:icon="@drawable/edit"
+        android:title="Edit Data"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/UsageTab"
+        android:icon="@drawable/graph"
+        android:title="Usage Graphs"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/settingsTab"
+        android:title="Settings"
+        android:icon="@drawable/settings"
+        app:showAsAction="always"/>
+
+</menu>

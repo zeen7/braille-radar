@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ExploreFragment">
+
+    <fragment
+        android:id="@+id/ExploreFragment"
+        android:name="com.example.brailleradar.ExploreFragment"
+        android:label="@string/navigation_fragment_label"
+        tools:layout="@layout/explore_fragment"/>
+    <fragment
+        android:id="@+id/RadarFragment"
+        android:name="com.example.brailleradar.RadarFragment"
+        android:label="@string/radar_fragment_label"
+        tools:layout="@layout/radar_fragment"/>
+    <fragment
+        android:id="@+id/SettingsFragment"
+        android:name="com.example.brailleradar.SettingsFragment"
+        android:label="@string/setting_fragment_label"
+        tools:layout="@layout/settings_layout"/>
+    <fragment
+        android:id="@+id/TagListFragment"
+        android:name="com.example.brailleradar.TagListFragment"
+        android:label="@string/tag_list_fragment_label"
+        tools:layout="@layout/tag_list_fragment"/>
+    <fragment
+        android:id="@+id/NavigationFragment"
+        android:name="com.example.brailleradar.NavigationFragment"
+        android:label="@string/navigation_fragment_label2"
+        tools:layout="@layout/navigation_fragment"/>
+
+
+
+</navigation>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="30dp"
+    android:textAlignment="center"
+    tools:context=".NavigationFragment">
+
+    <TextView
+        android:id="@+id/tracking_tag_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Tracking: "
+        android:textSize="32dp"/>
+
+    <TextView
+        android:id="@+id/tracking_tag_location_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textSize="24dp"/>
+
+    <ListView
+        android:id="@+id/waypointList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"/>
+
+    <ImageView
+        android:id="@+id/direction_arrow"
+        android:layout_width="match_parent"
+        android:layout_height="118dp"
+        android:layout_marginTop="30dp"
+        android:rotationX="0"
+        android:rotationY="0"
+        android:src="@drawable/direction_arrow" />
+
+
+
+    <TextView
+        android:id="@+id/tag_distance_text"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="-30dp"
+        android:layout_weight="1"
+        android:text="Distance: "
+        android:textAlignment="center"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tag_bearing_text"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="-30dp"
+        android:layout_weight="1"
+        android:text="Bearing: "
+        android:textAlignment="center"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/instruction_text"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="-30dp"
+        android:layout_weight="1"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="20sp" />
+
+</LinearLayout>

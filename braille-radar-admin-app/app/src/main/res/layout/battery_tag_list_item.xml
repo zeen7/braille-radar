@@ -1,0 +1,83 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <!-- First column (Icon) -->
+    <ImageView
+        android:id="@+id/batteryTagImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginEnd="20dp"
+        android:layout_gravity="center"
+        />
+
+    <!-- Second column (Name, Location, Clusters) -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="left|center_vertical"
+        android:layout_weight="1"
+        android:layout_marginEnd="20dp">
+
+        <TextView
+            android:id="@+id/batteryNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/batteryDeviceNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="17dp"/>
+
+        <TextView
+            android:id="@+id/batteryLocationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:textSize="16dp"/>
+
+        <LinearLayout
+            android:id="@+id/batteryClustersLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <!-- This LinearLayout will be populated dynamically with cluster TextViews -->
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center|end">
+
+        <TextView
+            android:id="@+id/batteryLifeDaysTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center|end"
+            android:textSize="20dp"
+            android:layout_weight="1"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/batteryLifeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center|end"
+            android:textSize="17dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.BrailleRadar" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+<!--        <item name="colorPrimary">@color/Orange</item>-->
+<!--        <item name="colorPrimaryDark">@color/Red</item>-->
+<!--        <item name="colorAccent">@color/BlanchedAlmond</item>-->
+<!--        <item name="android:windowBackground">@color/Black</item>-->
+<!--        <item name="android:textColorPrimary">@color/Orange</item>-->
+
+    </style>
+
+    <style name="Theme.BrailleRadar" parent="Base.Theme.BrailleRadar" />
+</resources>

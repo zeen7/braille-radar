@@ -1,0 +1,12 @@
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/ExploreTab"
+        android:title="Explore"
+        android:icon="@drawable/navigation_logo"/>
+    <item
+        android:id="@+id/settingsTab"
+        android:title="Settings"
+        android:icon="@drawable/settings"/>
+
+</menu>

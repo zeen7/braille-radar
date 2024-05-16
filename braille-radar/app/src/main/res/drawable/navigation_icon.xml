@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Outer circle (using the existing circle_button drawable) -->
+    <item android:drawable="@drawable/circle_button" />
+
+    <!-- Inner arrow (assuming the arrow is centered) -->
+    <item android:gravity="center">
+        <inset
+            android:insetLeft="20dp"
+            android:insetTop="20dp"
+            android:insetRight="20dp"
+            android:insetBottom="20dp">
+
+        <bitmap
+            android:src="@drawable/direction_arrow_thick_white"
+            android:gravity="center"
+            android:layout_width="24dp"
+            android:layout_height="24dp" />
+        </inset>
+    </item>
+
+</layer-list>
