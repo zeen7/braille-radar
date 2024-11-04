@@ -85,10 +85,6 @@ public class AdminCreationFrag extends Fragment {
                 Log.e("organization", "Unable to fetch organizations");
             }
         });
-//        String[] companyNamesArray = getResources().getStringArray(R.array.company_names_array);
-//        ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, companyNamesArray);
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        spinnerOrgName.setAdapter(adapter);
 
 
         spinnerOrgName.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -107,7 +103,6 @@ public class AdminCreationFrag extends Fragment {
             }
         });
 
-        // result text
         super.onViewCreated(view, savedInstanceState);
         // Find the TextView by its ID
         result = view.findViewById(R.id.txtResult);
@@ -116,54 +111,21 @@ public class AdminCreationFrag extends Fragment {
         binding.btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //AdminService adminService = new AdminService();
-
                 // get inputs from page
                 String username = binding.inputAdminName.getText().toString();
-//                String organization_name = selectedOrganization.getName();
                 String password = binding.inputPassword.getText().toString();
 
-
-
-                // hardcoded organization for now, eventually will run getOrganizations() or smth
-                // validate existence and also whether there's already an admin for it?
-
-
-//                String organizationIdString = "a43f8d1b-d2ed-4c6f-84b2-203764b6d635"; // tech corp
                 String organizationIdString = preferences.getString("organizationId", null);
                 System.out.println(organizationIdString);
-//                organizationIdString = getOrganizationIdByCompanyName(organization_name);
-//                System.out.println(organizationIdString);
-//                ObjectId organizationId = new ObjectId(organizationIdString);
 
 
                 // Create an Admin object with the retrieved values
-                    // getters and setters are generated automatically at runtime
+                // getters and setters are generated automatically at runtime
                 Admin admin = new Admin();
                 admin.setUsername(username);
                 admin.setPassword(password);
                 admin.setOrganizationId(organizationIdString);
                 admin.setEmail("email2@test.com");
-
-//                adminService.createAdmin(admin, new ServiceCallback() {
-//                        @Override
-//                    public void onSuccess(JsonNode jsonData) {
-////                String username = jsonData.get("username").toString();
-////                System.out.println(username);
-//                        System.out.println("createAdmin() success!");
-//                        String success = "Success!";
-//                        result.setText(success);
-//                        System.out.println(jsonData.toString());
-//                    }
-//
-//                    @Override
-//                    public void onFailure(Throwable t) {
-//                        System.out.println(t.toString());
-//                        String error = "Error";
-//                        result.setText(error);
-//                        System.out.println("Error: createAdmin()");
-//                    }
-//                });
             }
         });
 
@@ -176,8 +138,6 @@ public class AdminCreationFrag extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
-    // hardcoded workaround for demo
     private String getOrganizationIdByCompanyName(String companyName) {
         Resources res = getResources();
         String[] companyNamesArray = res.getStringArray(R.array.company_names_array);
