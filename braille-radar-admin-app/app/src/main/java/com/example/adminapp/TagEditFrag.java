@@ -140,18 +140,6 @@ public class TagEditFrag extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                // This method is called when nothing is selected in the Spinner
-
-                // Doesn't work here for some reason...
-//                // Select the previous type.
-//                int position = adapter.getPosition(selectedTag.getType());
-//
-//                // Set the selection to the position of the previous selected type
-//                if (position != AdapterView.INVALID_POSITION) {
-//                    spinnerTagType.setSelection(position);
-//                }
-//
-//                System.out.println("position: " + position);
             }
         });
         spinnerTagType.setAdapter(adapter);
@@ -170,9 +158,6 @@ public class TagEditFrag extends Fragment {
                 ArrayAdapter<Cluster> adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, clustersArray);
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinnerCluster.setAdapter(adapter);
-
-                // Set the default to the first element
-//                spinnerCluster.setSelection(0);
             }
 
             @Override
@@ -180,10 +165,6 @@ public class TagEditFrag extends Fragment {
                 Log.e("cluster", "Unable to fetch organization clusters");
             }
         });
-//        String[] companyNamesArray = getResources().getStringArray(R.array.company_names_array);
-//        ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, companyNamesArray);
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        spinnerOrgName.setAdapter(adapter);
 
 
         spinnerCluster.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -209,18 +190,6 @@ public class TagEditFrag extends Fragment {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 // This method is called when nothing is selected in the Spinner
-
-//                // Select the element that has the same clusterId as the current selectedCluster!
-//                // Iterate through the adapter to find the position of the item with matching clusterId
-//                SpinnerAdapter adapter = (SpinnerAdapter) parent.getAdapter();
-//                for (int i = 0; i < adapter.getCount(); i++) {
-//                    Cluster cluster = (Cluster) adapter.getItem(i);
-//                    if (cluster != null && cluster.getClusterId().equals(selectedCluster.getClusterId())) {
-//                        // Found the matching item, set the selection
-//                        spinnerCluster.setSelection(i);
-//                        break;
-//                    }
-//                }
             }
         });
 
@@ -359,21 +328,6 @@ public class TagEditFrag extends Fragment {
                         System.out.println("Error: updateTag()");
                     }
                 });
-
-
-//                tagService.getAllTags(new ServiceCallback() {
-//                    @Override
-//                    public void onSuccess(JsonNode jsonData) {
-//                        System.out.println("getAllTags success!");
-//                        System.out.println(jsonData.toString());
-//                    }
-//
-//                    @Override
-//                    public void onFailure(Throwable t) {
-//                        System.out.println(t.toString());
-//                        System.out.println("Error: getAllTags()");
-//                    }
-//                });
             }
         });
 
