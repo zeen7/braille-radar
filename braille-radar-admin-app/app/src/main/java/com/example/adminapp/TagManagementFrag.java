@@ -103,18 +103,11 @@ public class TagManagementFrag extends Fragment {
                 Log.e("cluster", "Unable to fetch organization (" + selectedOrganization + ") clusters");
             }
         });
-//        String[] companyNamesArray = getResources().getStringArray(R.array.company_names_array);
-//        ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, companyNamesArray);
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        spinnerOrgName.setAdapter(adapter);
 
         spinnerCluster.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 selectedCluster = (Cluster) parent.getItemAtPosition(position);
-//                editor.putString("organizationName", selectedOrganization.getName());
-//                editor.putString("organizationId", selectedOrganization.getOrgId());
-//                editor.apply();
                 System.out.println("selectedCluster: " + selectedCluster.getName() + " (" + selectedCluster.getClusterId() + ")");
 
                 // Show the progress indicator again (+ clear listView)
@@ -157,17 +150,6 @@ public class TagManagementFrag extends Fragment {
                             loading.setVisibility(ProgressBar.GONE);
                         }
 
-                        // Note: This does not work for some reason so I'm going with the button press
-//                        // Setup Tag List View
-//                        // Set a click listener to move to the edit tag page
-//                        listView.setOnItemClickListener((parent, v, position, id) -> {
-//                            System.out.println("SELECTED!");
-//                            TagInfo selectedTag = tagList.get(position);
-//                            System.out.println("selectedTag: " + selectedTag);
-////                            moveToTagEditFragment(selectedTag);
-//                        });
-
-
                         ArrayAdapter<TagInfo> adapter = new ArrayAdapter<TagInfo>(
                                 requireContext(),
                                 R.layout.tag_list_item,
@@ -188,7 +170,6 @@ public class TagManagementFrag extends Fragment {
                                 ImageView iconImageView = convertView.findViewById(R.id.tagImageView);
                                 TextView nameTextView = convertView.findViewById(R.id.nameTextView);
                                 TextView deviceNameTextView = convertView.findViewById(R.id.deviceNameTextView);
-//                                LinearLayout clustersLayout = convertView.findViewById(R.id.clustersLayout);
                                 TextView locationTextView = convertView.findViewById(R.id.locationTextView);
                                 ImageView deleteButtonImageView = convertView.findViewById(R.id.deleteButton);
                                 Button editButton = convertView.findViewById(R.id.editButton);
@@ -221,11 +202,9 @@ public class TagManagementFrag extends Fragment {
 
                                             @Override
                                             public void onFailure(Throwable t) {
-//                                                Log.e("tagservice", "Failed to delete tag " + selectedTag.getName() + " (" + selectedTag.getTagId() + "): " + t.toString());
                                                 Log.d("tagservice", "Attempted to delete tag " + selectedTag.getName() + " (" + selectedTag.getTagId() + "): " + t.toString());
                                                 tagList.remove(position);
                                                 notifyDataSetChanged();
-//                                                Toast.makeText(getActivity(), "Failed to delete tag", Toast.LENGTH_SHORT).show();
                                                 Toast.makeText(getActivity(), "Tag deleted successfully!", Toast.LENGTH_SHORT).show();
                                             }
                                         });
@@ -239,7 +218,6 @@ public class TagManagementFrag extends Fragment {
                                 });
 
                                 iconImageView.setImageResource(getIconBlack(tag.getType()));
-//                                iconImageView.setBackgroundResource(R.drawable.circle_button);
                                 iconImageView.setContentDescription(tag.getType());
 
                                 final int iconMaxHeight = getDp(50);
@@ -258,24 +236,6 @@ public class TagManagementFrag extends Fragment {
                                     locationTextView.setText("("+ location + ")");
                                     locationTextView.setContentDescription("at " + location);
                                 }
-
-//                                // Clear previous cluster TextViews and add new ones
-//                                clustersLayout.removeAllViews();
-//                                String clustersDescription = "In";
-//                                boolean first = true;
-//                                for (String cluster : tag.getClusterNames()) {
-//                                    TextView clusterTextView = new TextView(getContext());
-//                                    clusterTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16);
-//                                    clusterTextView.setTextColor(Color.DKGRAY);
-//                                    clusterTextView.setMaxHeight(getDp(20));
-//                                    clusterTextView.setText(cluster);
-//                                    clustersDescription += (first ? "" : " and ") + clustersDescription + ", ";
-//                                    if(first) {
-//                                        first = false;
-//                                    }
-//                                    clustersLayout.addView(clusterTextView);
-//                                }
-//                                clustersLayout.setContentDescription(clustersDescription);
 
                                 return convertView;
                             }
@@ -299,50 +259,16 @@ public class TagManagementFrag extends Fragment {
     }
 
     private int getIcon(String type) {
-//        ImageView imageView = new ImageView(requireContext());
-
         // Assuming your resource names follow a naming convention like "type_icon"
         int resourceId = getResources().getIdentifier(type.toLowerCase() + "_icon", "drawable", requireContext().getPackageName());
-
-//        if(resourceId != 0) {
-//            imageView.setImageResource(resourceId);
-//        }
-
-//        //setting image position
-//        imageView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-//                LinearLayout.LayoutParams.WRAP_CONTENT));
-
-//        switch(type) {
-//            case "room": imageView.setImageResource(R.drawable.room_icon);
-//            break;
-//            case "washroom": imageView.setImageResource(R.drawable.washroom_icon);
-//            break;
-//            case "food": imageView.setImageResource(R.drawable.food_icon);
-//            break;
-//            case "elevator": imageView.setImageResource(R.drawable.elevator_icon);
-//            break;
-//            case "stairs": imageView.setImageResource(R.drawable.stairs_icon);
-//            break;
-//            case "entrance": imageView.setImageResource(R.drawable.entrance_icon);
-//            break;
-//
-//        }
-
-//        return imageView;
         return resourceId;
     }
 
     private int getIconBlack(String type) {
-//        ImageView imageView = new ImageView(requireContext());
 
         // Assuming your resource names follow a naming convention like "type_icon"
         int resourceId = getResources().getIdentifier(type.toLowerCase() + "_icon_black", "drawable", requireContext().getPackageName());
 
-//        if (resourceId != 0) {
-//            imageView.setImageResource(resourceId);
-//        }
-
-//        return imageView;
         return resourceId;
     }
 
