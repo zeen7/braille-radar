@@ -143,9 +143,6 @@ public class TagCreationFrag extends Fragment {
                 ArrayAdapter<Cluster> adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, clustersArray);
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinnerCluster.setAdapter(adapter);
-
-                // Set the default to the first element
-//                spinnerCluster.setSelection(0);
             }
 
             @Override
@@ -153,19 +150,13 @@ public class TagCreationFrag extends Fragment {
                 Log.e("cluster", "Unable to fetch organization clusters");
             }
         });
-//        String[] companyNamesArray = getResources().getStringArray(R.array.company_names_array);
-//        ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, companyNamesArray);
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        spinnerOrgName.setAdapter(adapter);
+
 
 
         spinnerCluster.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 selectedCluster = (Cluster) parent.getItemAtPosition(position);
-//                editor.putString("organizationName", selectedOrganization.getName());
-//                editor.putString("organizationId", selectedOrganization.getOrgId());
-//                editor.apply();
                 System.out.println("selectedCluster: " + selectedCluster.getName() + " (" + selectedCluster.getClusterId() + ")");
             }
 
@@ -285,21 +276,6 @@ public class TagCreationFrag extends Fragment {
                         System.out.println("Error: createTag()");
                     }
                 });
-
-
-//                tagService.getAllTags(new ServiceCallback() {
-//                    @Override
-//                    public void onSuccess(JsonNode jsonData) {
-//                        System.out.println("getAllTags success!");
-//                        System.out.println(jsonData.toString());
-//                    }
-//
-//                    @Override
-//                    public void onFailure(Throwable t) {
-//                        System.out.println(t.toString());
-//                        System.out.println("Error: getAllTags()");
-//                    }
-//                });
             }
         });
 
