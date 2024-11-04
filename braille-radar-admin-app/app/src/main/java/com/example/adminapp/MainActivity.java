@@ -62,11 +62,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             Log.d("mainactivity.oncreate", "ACCESS_FINE_LOCATION: HERE1!");
             requestPermission(Manifest.permission.ACCESS_FINE_LOCATION);
             Log.d("mainactivity.oncreate", "ACCESS_FINE_LOCATION: HERE!");
-//            try {
-//                Thread.sleep(5000);
-//            } catch (InterruptedException e) {
-//                throw new RuntimeException(e);
-//            }
+
         }
 
         // LOCAL SAVING
@@ -114,24 +110,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             if (grantResults[i] == PackageManager.PERMISSION_DENIED) {
                 if (!shouldShowRequestPermissionRationale(permission)) {
                     finishAndRemoveTask();
-//                } else {
-//                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-//                    alertDialogBuilder
-//                            .setTitle("Second Chance")
-//                            .setMessage("Permission required for app to run, please retry? \uD83E\uDD7A")
-//                            .setCancelable(false)
-//                            .setPositiveButton("RETRY", (dialog, id) -> {
-//                                ActivityCompat.requestPermissions(this, new String[]{permission}, 3);
-//                                Intent i1 = new Intent(MainActivity.this, MainActivity.class);
-//                                i1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-//                                startActivity(i1);
-//                            })
-//                            .setNegativeButton("EXIT", (dialog, id) -> {
-//                                finish();
-//                                dialog.cancel();
-//                            })
-//                            .create()
-//                            .show();
                 }
             }
         }
