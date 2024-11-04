@@ -133,50 +133,15 @@ public class TagListAdapter extends RecyclerView.Adapter<TagListAdapter.ViewHold
     }
 
     private int getIcon(String type) {
-//        ImageView imageView = new ImageView(requireContext());
-
         // Assuming your resource names follow a naming convention like "type_icon"
         int resourceId = context.getResources().getIdentifier(type.toLowerCase() + "_icon", "drawable", context.getPackageName());
 
-//        if(resourceId != 0) {
-//            imageView.setImageResource(resourceId);
-//        }
-
-//        //setting image position
-//        imageView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-//                LinearLayout.LayoutParams.WRAP_CONTENT));
-
-//        switch(type) {
-//            case "room": imageView.setImageResource(R.drawable.room_icon);
-//            break;
-//            case "washroom": imageView.setImageResource(R.drawable.washroom_icon);
-//            break;
-//            case "food": imageView.setImageResource(R.drawable.food_icon);
-//            break;
-//            case "elevator": imageView.setImageResource(R.drawable.elevator_icon);
-//            break;
-//            case "stairs": imageView.setImageResource(R.drawable.stairs_icon);
-//            break;
-//            case "entrance": imageView.setImageResource(R.drawable.entrance_icon);
-//            break;
-//
-//        }
-
-//        return imageView;
         return resourceId;
     }
 
     private int getIconBlack(String type) {
-//        ImageView imageView = new ImageView(requireContext());
-
         // Assuming your resource names follow a naming convention like "type_icon"
         int resourceId = context.getResources().getIdentifier(type.toLowerCase() + "_icon_black", "drawable", context.getPackageName());
-
-//        if (resourceId != 0) {
-//            imageView.setImageResource(resourceId);
-//        }
-
-//        return imageView;
         return resourceId;
     }
 
